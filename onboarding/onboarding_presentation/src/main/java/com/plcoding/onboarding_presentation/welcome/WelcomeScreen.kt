@@ -8,11 +8,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import com.plcoding.core.R
 import com.plcoding.core_ui.LocalSpacing
 import com.plcoding.onboarding_presentation.components.ActionButton
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
 
+@RootNavGraph(start = true)
+@Destination
 @Composable
 fun WelcomeScreen() {
     val spacing = LocalSpacing.current
