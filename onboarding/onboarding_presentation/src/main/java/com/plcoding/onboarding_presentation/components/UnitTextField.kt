@@ -38,7 +38,8 @@ fun UnitTextField(
             singleLine = true,
             modifier = Modifier
                 .width(IntrinsicSize.Min)
-                .alignBy(LastBaseline)
+                .alignBy(LastBaseline),
+            textStyle = textStyle
         )
         Spacer(modifier = Modifier.width(spacing.spaceSmall))
         Text(

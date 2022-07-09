@@ -2,9 +2,7 @@ package com.plcoding.calorytracker.navigation
 
 import androidx.compose.ui.ExperimentalComposeUiApi
 import coil.annotation.ExperimentalCoilApi
-//import com.plcoding.onboarding_presentation.OnboardingNavGraph
-import com.plcoding.onboarding_presentation.welcome.OnboardingNavGraph
-//import com.plcoding.tracker_presentation.TrackerNavGraph
+import com.plcoding.onboarding_presentation.OnboardingNavGraph
 import com.ramcosta.composedestinations.spec.DestinationSpec
 import com.ramcosta.composedestinations.spec.NavGraphSpec
 

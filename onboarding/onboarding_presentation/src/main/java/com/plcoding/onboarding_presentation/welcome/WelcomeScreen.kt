@@ -10,6 +10,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.plcoding.core.R
 import com.plcoding.core_ui.LocalSpacing
+import com.plcoding.onboarding_presentation.OnboardingNavigator
 import com.plcoding.onboarding_presentation.components.ActionButton
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
@@ -17,7 +18,9 @@ import com.ramcosta.composedestinations.annotation.RootNavGraph
 @RootNavGraph(start = true)
 @Destination
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(
+    navigator: OnboardingNavigator
+) {
     val spacing = LocalSpacing.current
     Column(
         modifier = Modifier
@@ -34,7 +37,7 @@ fun WelcomeScreen() {
         Spacer(modifier = Modifier.height(spacing.spaceMedium))
         ActionButton(
             text = stringResource(id = R.string.next),
-            onClick = { /*TODO*/ },
+            onClick = { navigator.navigateToNextScreen() },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
     }

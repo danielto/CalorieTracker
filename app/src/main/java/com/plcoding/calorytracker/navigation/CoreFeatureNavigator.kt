@@ -1,9 +1,5 @@
 package com.plcoding.calorytracker.navigation
 
-import androidx.compose.ui.ExperimentalComposeUiApi
-import androidx.navigation.NavController
-import coil.annotation.ExperimentalCoilApi
-import com.plcoding.onboarding_presentation.OnboardingNavigator
 //import com.plcoding.onboarding_presentation.destinations.ActivityScreenDestination
 //import com.plcoding.onboarding_presentation.destinations.AgeScreenDestination
 //import com.plcoding.onboarding_presentation.destinations.GenderScreenDestination
@@ -13,13 +9,18 @@ import com.plcoding.onboarding_presentation.OnboardingNavigator
 //import com.plcoding.onboarding_presentation.destinations.OnboardingDestination
 //import com.plcoding.onboarding_presentation.destinations.WeightScreenDestination
 //import com.plcoding.onboarding_presentation.destinations.WelcomeScreenDestination
-import com.plcoding.onboarding_presentation.welcome.destinations.WelcomeScreenDestination
 //import com.plcoding.tracker_presentation.destinations.SearchScreenDestination
 //import com.plcoding.tracker_presentation.destinations.TrackerOverviewScreenDestination
 //import com.plcoding.tracker_presentation.search.SearchScreenNavigator
 //import com.plcoding.tracker_presentation.tracker_overview.TrackerOverviewScreenNavigator
-import com.ramcosta.composedestinations.navigation.navigateTo
+import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.navigation.NavController
+import coil.annotation.ExperimentalCoilApi
+import com.plcoding.onboarding_presentation.OnboardingNavigator
+import com.plcoding.onboarding_presentation.destinations.*
+import com.ramcosta.composedestinations.navigation.navigate
 import com.ramcosta.composedestinations.spec.DestinationSpec
+import java.lang.IllegalStateException
 
 @ExperimentalCoilApi
 @ExperimentalComposeUiApi
@@ -32,19 +33,22 @@ class CoreFeatureNavigator(
     OnboardingNavigator {
 
     override fun navigateToNextScreen() {
-//        currentDestination as? OnboardingDestination ?: throw RuntimeException("Trying to use Onboarding navigator from a non onboarding screen")
-//        val nextDirection = when (currentDestination) {
-//            WelcomeScreenDestination -> GenderScreenDestination
-//            GenderScreenDestination -> AgeScreenDestination
-//            AgeScreenDestination -> HeightScreenDestination
+        currentDestination as? OnboardingDestination
+            ?: throw RuntimeException("Trying to use Onboarding navigator from a non onboarding screen")
+        val nextDirection = when (currentDestination) {
+            WelcomeScreenDestination -> GenderScreenDestination
+            GenderScreenDestination -> AgeScreenDestination
+            AgeScreenDestination -> HeightScreenDestination
 //            HeightScreenDestination -> WeightScreenDestination
 //            WeightScreenDestination -> ActivityScreenDestination
 //            ActivityScreenDestination -> GoalScreenDestination
 //            GoalScreenDestination -> NutrientGoalScreenDestination
 //            NutrientGoalScreenDestination -> TrackerOverviewScreenDestination
-//        }
-//
-//        navController.navigateTo(nextDirection)
+            else -> {
+               throw IllegalStateException("Destination is not specified")
+            }
+        }
+        navController.navigate(nextDirection)
     }
 
 //    override fun navigateUp() {

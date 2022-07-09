@@ -13,7 +13,7 @@ import com.plcoding.calorytracker.navigation.CoreFeatureNavigator
 import com.plcoding.calorytracker.navigation.RootNavGraph
 import com.plcoding.calorytracker.ui.theme.CaloryTrackerTheme
 import com.plcoding.core.domain.preferences.Preferences
-import com.plcoding.onboarding_presentation.welcome.OnboardingNavGraph
+import com.plcoding.onboarding_presentation.OnboardingNavGraph
 import com.ramcosta.composedestinations.DestinationsNavHost
 import com.ramcosta.composedestinations.navigation.dependency
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,10 +30,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        val shouldShowOnboarding = preferences.loadShouldShowOnboarding()
-
         setContent {
             CaloryTrackerTheme {
-
                 val navController = rememberNavController()
                 val scaffoldState = rememberScaffoldState()
                 Scaffold(
