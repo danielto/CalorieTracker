@@ -1,14 +1,5 @@
 package com.plcoding.calorytracker.navigation
 
-//import com.plcoding.onboarding_presentation.destinations.ActivityScreenDestination
-//import com.plcoding.onboarding_presentation.destinations.AgeScreenDestination
-//import com.plcoding.onboarding_presentation.destinations.GenderScreenDestination
-//import com.plcoding.onboarding_presentation.destinations.GoalScreenDestination
-//import com.plcoding.onboarding_presentation.destinations.HeightScreenDestination
-//import com.plcoding.onboarding_presentation.destinations.NutrientGoalScreenDestination
-//import com.plcoding.onboarding_presentation.destinations.OnboardingDestination
-//import com.plcoding.onboarding_presentation.destinations.WeightScreenDestination
-//import com.plcoding.onboarding_presentation.destinations.WelcomeScreenDestination
 //import com.plcoding.tracker_presentation.destinations.SearchScreenDestination
 //import com.plcoding.tracker_presentation.destinations.TrackerOverviewScreenDestination
 //import com.plcoding.tracker_presentation.search.SearchScreenNavigator
@@ -39,10 +30,10 @@ class CoreFeatureNavigator(
             WelcomeScreenDestination -> GenderScreenDestination
             GenderScreenDestination -> AgeScreenDestination
             AgeScreenDestination -> HeightScreenDestination
-//            HeightScreenDestination -> WeightScreenDestination
-//            WeightScreenDestination -> ActivityScreenDestination
-//            ActivityScreenDestination -> GoalScreenDestination
-//            GoalScreenDestination -> NutrientGoalScreenDestination
+            HeightScreenDestination -> WeightScreenDestination
+            WeightScreenDestination -> ActivityScreenDestination
+            ActivityScreenDestination -> GoalScreenDestination
+            GoalScreenDestination -> NutrientGoalScreenDestination
 //            NutrientGoalScreenDestination -> TrackerOverviewScreenDestination
             else -> {
                throw IllegalStateException("Destination is not specified")

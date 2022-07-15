@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import com.plcoding.core.data.preferences.DefaultPreferences
 import com.plcoding.core.domain.preferences.Preferences
 import com.plcoding.core.domain.use_case.FilterOutDigitsUseCase
+import com.plcoding.core.domain.use_case.ValidateWeightUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,5 +33,11 @@ object AppModule {
     @Singleton
     fun provideFilterOutDigitsUseCase(): FilterOutDigitsUseCase {
         return FilterOutDigitsUseCase()
+    }
+
+    @Provides
+    @Singleton
+    fun provideValidateWeightUseCase(): ValidateWeightUseCase {
+        return ValidateWeightUseCase()
     }
  }

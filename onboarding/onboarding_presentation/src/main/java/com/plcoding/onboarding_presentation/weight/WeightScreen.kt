@@ -1,4 +1,4 @@
-package com.plcoding.onboarding_presentation.height
+package com.plcoding.onboarding_presentation.weight
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -6,7 +6,6 @@ import androidx.compose.material.ScaffoldState
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.currentRecomposeScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -23,11 +22,12 @@ import kotlinx.coroutines.flow.collect
 
 @Destination
 @Composable
-fun HeightScreen(
+fun WeightScreen(
     scaffoldState: ScaffoldState,
     navigator: OnboardingNavigator,
-    viewModel: HeightViewModel = hiltViewModel()
+    viewModel: WeightViewModel = hiltViewModel()
 ) {
+
     val spacing = LocalSpacing.current
     val context = LocalContext.current
 
@@ -54,14 +54,14 @@ fun HeightScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = stringResource(id = R.string.whats_your_height),
+                text = stringResource(id = R.string.whats_your_weight),
                 style = MaterialTheme.typography.h3
             )
             Spacer(modifier = Modifier.height(spacing.spaceMedium))
             UnitTextField(
-                value = viewModel.height,
-                onValueChanged = viewModel::onHeightEnter,
-                unit = stringResource(id = R.string.cm)
+                value = viewModel.weight,
+                onValueChanged = viewModel::onWeightEntered,
+                unit = stringResource(id = R.string.kg)
             )
         }
 
@@ -71,4 +71,5 @@ fun HeightScreen(
             modifier = Modifier.align(Alignment.BottomEnd)
         )
     }
+
 }
